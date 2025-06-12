@@ -1,3 +1,9 @@
+how to run?
+1. you need to make a schemas db for MySQL named 'admin'
+2. you need to migrate the migration with 'php spark migrate'
+3. you need to seeds the db with 'php spark db:seed AdminSeeds'
+4. then when you have to done with no errors, then you can run the project with 'php spark serve'
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
