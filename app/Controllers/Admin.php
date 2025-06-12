@@ -18,7 +18,16 @@ class Admin extends BaseController
     public function index()
     {
         $admins = $this->adminModel->findAll();
-        return view('admin/admin', ['admins' => $admins]);
+        $breadcrumbs = [
+        ['label' => 'Home', 'url' => base_url('/')],
+        ['label' => 'Admin', 'url' => ''] 
+        ];
+
+        return view('admin/index', [
+        'admins' => $admins,
+        'breadcrumbs' => $breadcrumbs,
+        'pageTitle' => 'Data Admin'
+        ]);
     }
 
     // SIMPAN ADMIN BARU

@@ -10,7 +10,7 @@ class Auth extends BaseController
     public function index()
     {
         // Tampilkan halaman login
-        return view('admin/login');
+        return view('login/index');
     }
 
  
@@ -32,7 +32,7 @@ class Auth extends BaseController
                     'admin_name' => $admin['email'],
                     'isLoggedIn' => true
                 ]);
-                return redirect()->to('/admin/dashboard');
+                return redirect()->to('dashboard')->with('success', 'Login berhasil');
             } else {
                 return redirect()->back()->with('error', 'Password salah');
             }
@@ -44,6 +44,6 @@ class Auth extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/admin/login');
+        return redirect()->to('login')->with('success', 'Logout berhasil');
     }
 }
